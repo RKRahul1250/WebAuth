@@ -18,10 +18,9 @@ namespace WebAuth.Services
         {
             users = [];
 
-            // Use content root path for project file
             PROJECT_FILE = Path.Combine(hostEnvironment.ContentRootPath, "users.txt");
 
-            // AppData file path
+            
             string appDataPath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 "WebAuth"
@@ -37,7 +36,7 @@ namespace WebAuth.Services
         {
             try
             {
-                // Create project directory if it doesn't exist
+               
                 var projectDir = Path.GetDirectoryName(PROJECT_FILE);
                 if (!string.IsNullOrEmpty(projectDir))
                 {
@@ -68,7 +67,7 @@ namespace WebAuth.Services
                 // Always save to admin file
                 File.WriteAllLines(ADMIN_FILE, lines, Encoding.UTF8);
 
-                // Try to save to project file, but don't fail if it's not possible
+                
                 try
                 {
                     File.WriteAllLines(PROJECT_FILE, lines, Encoding.UTF8);
