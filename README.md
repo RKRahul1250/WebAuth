@@ -20,3 +20,13 @@ A robust authentication system built with ASP.NET Core 9.0, featuring secure pas
 - Custom Authentication Service
 - Web Audio API for Interactive Feedback
 - Secure Password Hashing
+
+## Data Storage
+- User credentials are stored in a secure text file (users.txt)
+- Passwords are never stored in plain text
+- Each password is:
+  - Salted with a unique value
+  - Encrypted using secure hashing
+  - Stored in format: username:salt:hashedPassword
+- Admin can manage users through dashboard
+- File-based storage for easy deployment and testing
