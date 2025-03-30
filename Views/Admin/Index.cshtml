@@ -1,0 +1,42 @@
+@model List<string>
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="container mt-5">
+    <h2>User Management</h2>
+    
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var username in Model)
+                {
+                    <tr>
+                        <td>@username</td>
+                        <td>
+                            <form method="post" action="@Url.Action("Delete", "Admin")" style="display: inline;">
+                                <input type="hidden" name="username" value="@username" />
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?')">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            No users found.
+        </div>
+    }
+</div>
