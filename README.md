@@ -20,8 +20,3 @@ A robust authentication system built with ASP.NET Core 9.0, featuring secure pas
 - Custom Authentication Service
 - Web Audio API for Interactive Feedback
 - Secure Password Hashing
-
-## Local Setup
-1. Clone the repository
-```bash
-git clone https://github.com/RKRahul1250/WebAuth.git
